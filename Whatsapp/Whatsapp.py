@@ -17,7 +17,6 @@ print()
 navegador = webdriver.Chrome(ChromeDriverManager().install())
 navegador.get('https://web.whatsapp.com')
 
-#time.sleep(15)
 while len(navegador.find_elements_by_id("side")) < 1:
     time.sleep(1)
 
@@ -31,7 +30,6 @@ for i, msg in enumerate(contatos_df['Mensagem']):
     link = f'https://web.whatsapp.com/send?phone={num}&text={texto}'
     navegador.get(link)
     
-#     time.sleep(10)
     while len(navegador.find_elements_by_id("side")) < 1:
         time.sleep(1)
         
